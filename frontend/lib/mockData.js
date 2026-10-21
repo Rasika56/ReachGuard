@@ -1,0 +1,13 @@
+// Clearly labelled demo-only data. These are illustrative records, not real scan results.
+export const mockRawScan = {
+  scan_id: "demo-reachguard-001",
+  status: "completed",
+  target: "ReachGuard demonstration project (simulated)",
+  component_count: 48,
+  warnings: ["DEMO MODE: findings, file paths, call paths and reachability states below are simulated. Run a real backend scan to obtain evidence from uploaded source code."],
+  findings: [
+    {package:"express",version:"4.17.1",vulnerability_id:"DEMO-CVE-001",summary:"Illustrative vulnerable request-handling behavior in a third-party package.",severity:"HIGH",references:["https://osv.dev/"],reachability_status:"REACHABLE",reachability_basis:"SIMULATED: a demo call path from the application entry point to a package function is shown for UI demonstration only.",priority:"High — demo only",file_path:"src/routes/upload.js",function_name:"handleUpload",line_start:42,line_end:58,vulnerable_symbol:"parseRequest()",dependency_usage:"SIMULATED direct call",dependency_path:["src/routes/upload.js::handleUpload","node_modules/express/lib/router/index.js::handle"],evidence_type:"Demo call-path evidence",evidence_complete:true},
+    {package:"lodash",version:"4.17.20",vulnerability_id:"DEMO-CVE-002",summary:"Illustrative vulnerable utility function; actual affected versions must be verified against authoritative advisory data.",severity:"CRITICAL",references:["https://osv.dev/"],reachability_status:"UNREACHABLE",reachability_basis:"SIMULATED: demo index shows no path to the affected symbol and assumes complete call-graph coverage. This is not a real conclusion.",priority:"Review evidence — demo only",file_path:"node_modules/lodash/template.js",function_name:"template",line_start:210,line_end:246,vulnerable_symbol:"template()",dependency_usage:"SIMULATED dependency present; affected symbol not called",dependency_path:[],evidence_type:"Demo static call-graph result",evidence_complete:true},
+    {package:"minimist",version:"1.2.5",vulnerability_id:"DEMO-CVE-003",summary:"Illustrative vulnerable argument parsing behavior.",severity:"MEDIUM",references:["https://osv.dev/"],reachability_status:"UNKNOWN",reachability_basis:"SIMULATED: package is present but the demo has insufficient call-graph and source mapping evidence to confirm or rule out use.",priority:"Investigate — demo only",file_path:"Not established",function_name:"Not established",line_start:null,line_end:null,vulnerable_symbol:"Unknown",dependency_usage:"Dependency listed; actual runtime usage not established",dependency_path:[],evidence_type:"Insufficient evidence",evidence_complete:false}
+  ]
+};
